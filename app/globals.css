@@ -2,20 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 200 55% 100%;
+    --foreground: 200 76% 4%;
+    --muted: 20 32% 95%;
+    --muted-foreground: 20 5% 40%;
+    --popover: 200 55% 100%;
+    --popover-foreground: 200 76% 4%;
+    --card: 0 0% 99%;
+    --card-foreground: 200 76% 3%;
+    --border: 200 12% 92%;
+    --input: 200 12% 92%;
+    --primary: 200 98% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 98% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 20 98% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 1 83% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 200 98% 39%;
+    --chart-1: 200 98% 39%;
+    --chart-2: 20 98% 39%;
+    --chart-3: 20 98% 39%;
+    --chart-4: 20 98% 42%;
+    --chart-5: 200 101% 39%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 200 38% 3%;
+    --foreground: 200 40% 98%;
+    --muted: 20 32% 5%;
+    --muted-foreground: 20 5% 60%;
+    --popover: 200 38% 3%;
+    --popover-foreground: 200 40% 98%;
+    --card: 200 38% 4%;
+    --card-foreground: 200 40% 99%;
+    --border: 200 12% 12%;
+    --input: 200 12% 12%;
+    --primary: 200 98% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 98% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 20 98% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 1 83% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 200 98% 39%;
+    --chart-1: 200 98% 39%;
+    --chart-2: 20 98% 39%;
+    --chart-3: 20 98% 39%;
+    --chart-4: 20 98% 42%;
+    --chart-5: 200 101% 39%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .card-wrapper {
+    @apply relative rounded-2xl bg-gradient-to-b from-slate-700 to-slate-800 overflow-hidden;
+  }
+
+  .card-wrapper::before {
+    background: conic-gradient(
+      rgba(244, 114, 182, 0.4) 0deg,
+      rgba(192, 132, 252, 0.4) 0deg,
+      transparent 80deg
+    );
+
+    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
+  }
+
+  .card-content {
+    @apply absolute left-[1px] top-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900;
+  }
+
+  .h1-grad {
+    @apply text-2xl xl:text-4xl bg-gradient-to-r from-green-400 via-gray-100 to-purple-700 text-transparent bg-clip-text
+  }
+}
+
+.browseBtn {
+  box-shadow: 0 0 5px #0284c5, 0 0 25px #0284c5;
+}
+
+.browseBtn:hover {
+  box-shadow: 0 0 5px #0284c5, 0 0 25px #0284c5, 0 0 50px #0284c5,
+    0 0 100px #0284c5, 0 0 200px #0284c5;
 }
