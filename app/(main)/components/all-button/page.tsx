@@ -4,7 +4,6 @@ import React, { useState, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 
-
 // Define types
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 type ButtonSize = "sm" | "md" | "lg";
@@ -15,6 +14,7 @@ interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   disabled?: boolean;
+  [key: string]: any; // Allow additional button props
 }
 
 interface LoadingButtonProps extends ButtonProps {
@@ -34,25 +34,21 @@ const BaseButton: React.FC<ButtonProps> = ({
     "inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2";
   const variants: Record<ButtonVariant, string> = {
     primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",
-    secondary:
-      "bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500",
-    outline:
-      "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500",
+    secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500",
+    outline: "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500",
     ghost: "text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
     danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500",
   };
   const sizes: Record<ButtonSize, string> = {
-    sm: "px-2.5 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
+    sm: "px-2 py-1 text-xs sm:px-2.5 sm:py-1.5 sm:text-sm",
+    md: "px-3 py-1.5 text-sm sm:px-4 sm:py-2 sm:text-base",
+    lg: "px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-lg",
   };
   const disabledStyles = "opacity-50 cursor-not-allowed";
 
   return (
     <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${
-        disabled ? disabledStyles : ""
-      } ${className}`}
+      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${disabled ? disabledStyles : ""} ${className}`}
       disabled={disabled}
       {...props}
     >
@@ -79,17 +75,12 @@ const IconButton: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <AnimatedButton {...props}>
       <svg
-        className="w-5 h-5 mr-2"
+        className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 13l4 4L19 7"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
       {children}
     </AnimatedButton>
@@ -106,15 +97,11 @@ const LoadingButton: React.FC<LoadingButtonProps> = ({
     <AnimatedButton {...props} disabled={isLoading || props.disabled}>
       {isLoading ? (
         <span className="flex items-center">
-          <svg className="animate-spin -ml-1 mr-3 h-5 w-5" viewBox="0 0 24 24">
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
+          <svg
+            className="animate-spin -ml-1 mr-2 h-4 w-4 sm:h-5 sm:w-5"
+            viewBox="0 0 24 24"
+          >
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
             <path
               className="opacity-75"
               fill="currentColor"
@@ -131,11 +118,7 @@ const LoadingButton: React.FC<LoadingButtonProps> = ({
 };
 
 // Gradient Button
-const GradientButton: React.FC<ButtonProps> = ({
-  children,
-  className = "",
-  ...props
-}) => {
+const GradientButton: React.FC<ButtonProps> = ({ children, className = "", ...props }) => {
   return (
     <AnimatedButton
       className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 ${className}`}
@@ -146,7 +129,7 @@ const GradientButton: React.FC<ButtonProps> = ({
   );
 };
 
-// Tabbed Button Showcase
+// Tabbed Button Showcase (Page Component)
 const ButtonShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"demo" | "code">("demo");
   const [copied, setCopied] = useState(false);
@@ -180,7 +163,7 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
     ghost: "text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
     danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500"
   };
-  const sizes: Record<ButtonSize, string> = { sm: "px-2.5 py-1.5 text-sm", md: "px-4 py-2 text-base", lg: "px-6 py-3 text-lg" };
+  const sizes: Record<ButtonSize, string> = { sm: "px-2 py-1 text-xs sm:px-2.5 sm:py-1.5 sm:text-sm", md: "px-3 py-1.5 text-sm sm:px-4 sm:py-2 sm:text-base", lg: "px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-lg" };
   const disabledStyles = "opacity-50 cursor-not-allowed";
 
   return (
@@ -205,35 +188,30 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
   };
 
   return (
-    <div className="min-h-screen flex flex-col py-6 px-5">
+    <div className="min-h-screen flex flex-col py-4 sm:py-6 px-4 sm:px-5 lg:px-8 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
       {/* Header */}
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold underline text-left mb-5">
+      <div className="mb-6 sm:mb-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold underline text-left mb-3 sm:mb-5">
           Button Components
         </h1>
-        <p className="text-lg">
-          A collection of reusable button components with various styles and
-          features.
+        <p className="text-sm sm:text-base md:text-lg max-w-2xl">
+          A collection of reusable button components with various styles and features.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="flex space-x-4 mb-5 pb-5">
+      <div className="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-5 pb-4 sm:pb-5">
         <button
-          className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-            activeTab === "demo"
-              ? "bg-cyan-600"
-              : "bg-gray-700 hover:bg-gray-600"
+          className={`px-4 py-1.5 sm:px-6 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${
+            activeTab === "demo" ? "bg-cyan-600 text-white" : "bg-gray-700 text-white hover:bg-gray-600"
           }`}
           onClick={() => setActiveTab("demo")}
         >
           Preview
         </button>
         <button
-          className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-            activeTab === "code"
-              ? "bg-cyan-600"
-              : "bg-gray-700 hover:bg-gray-600"
+          className={`px-4 py-1.5 sm:px-6 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${
+            activeTab === "code" ? "bg-cyan-600 text-white" : "bg-gray-700 text-white hover:bg-gray-600"
           }`}
           onClick={() => setActiveTab("code")}
         >
@@ -249,10 +227,10 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="grid gap-6 border-2 border-b-0 p-5">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Base Buttons</h3>
-              <div className="flex flex-wrap gap-4">
+          <div className="grid gap-4 sm:gap-6 border-2 border-b-0 p-4 sm:p-5 rounded-t-lg bg-white dark:bg-gray-800">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Base Buttons</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-4">
                 <BaseButton>Primary</BaseButton>
                 <BaseButton variant="secondary">Secondary</BaseButton>
                 <BaseButton variant="outline">Outline</BaseButton>
@@ -261,18 +239,18 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Sizes</h3>
-              <div className="flex flex-wrap gap-4">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Sizes</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-4">
                 <BaseButton size="sm">Small</BaseButton>
                 <BaseButton size="md">Medium</BaseButton>
                 <BaseButton size="lg">Large</BaseButton>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Special Buttons</h3>
-              <div className="flex flex-wrap gap-4">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Special Buttons</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-4">
                 <IconButton>With Icon</IconButton>
                 <LoadingButton isLoading>Loading</LoadingButton>
                 <GradientButton>Gradient</GradientButton>
@@ -283,7 +261,7 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
         ) : (
           <div className="relative">
             <button
-              className="absolute top-3 right-5 px-3 py-2 bg-cyan-600 text-white rounded font-semibold hover:bg-cyan-700 transition-colors flex items-center space-x-2 z-10"
+              className="absolute top-2 sm:top-3 right-2 sm:right-5 px-2 py-1 sm:px-3 sm:py-2 bg-cyan-600 text-white rounded font-semibold hover:bg-cyan-700 transition-colors flex items-center space-x-1 sm:space-x-2 z-10 text-xs sm:text-sm"
               onClick={handleCopy}
             >
               {copied ? (
@@ -292,15 +270,15 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <Check className="w-5 h-5" />
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5" />
                 </motion.div>
               ) : (
-                <Copy className="w-5 h-5" />
+                <Copy className="w-4 h-4 sm:w-5 sm:h-5" />
               )}
-              <span className="text-sm">{copied ? "Copied" : "Copy"}</span>
+              <span>{copied ? "Copied" : "Copy"}</span>
             </button>
             <pre
-              className="text-gray-800 dark:text-gray-200 p-6 rounded overflow-x-auto overflow-y-auto text-sm max-h-[600px] border-2"
+              className="text-gray-800 dark:text-gray-200 p-4 sm:p-6 rounded-lg overflow-x-auto overflow-y-auto text-xs sm:text-sm md:text-base max-h-[500px] sm:max-h-[600px] border-2 bg-white dark:bg-gray-800"
               style={{
                 scrollbarWidth: "thin" as const,
                 scrollbarColor: "#22d3ee #1e293b",
@@ -308,7 +286,7 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
             >
               <style jsx>{`
                 pre::-webkit-scrollbar {
-                  width: 10px;
+                  width: 8px sm:10px;
                 }
                 pre::-webkit-scrollbar-track {
                   background: #1e293b;
@@ -335,10 +313,6 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
 };
 
 export default ButtonShowcase;
-export {
-  BaseButton,
-  AnimatedButton,
-  IconButton,
-  LoadingButton,
-  GradientButton,
-};
+
+// Export other components for reuse, not as page exports
+export { BaseButton, AnimatedButton, IconButton, LoadingButton, GradientButton };
