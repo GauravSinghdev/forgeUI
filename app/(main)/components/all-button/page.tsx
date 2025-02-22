@@ -111,7 +111,7 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="grid gap-4 sm:gap-6 border-2 border-b-0 p-4 sm:p-5 rounded-t-lg bg-white dark:bg-gray-800">
+          <div className="grid gap-4 sm:gap-6 border-2 border-b-0 p-4 sm:p-5 rounded-t-lg ">
             <div className="space-y-3 sm:space-y-4">
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
                 Base Buttons
