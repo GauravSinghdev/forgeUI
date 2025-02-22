@@ -11,7 +11,7 @@ const HangingCard = () => {
   return (
     <div className="bg-gradient-to-t from-blue-200 w-full m-5 pb-10">
       <motion.div
-        initial={{ y: -200 }}
+        initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
         className="flex flex-col items-center"

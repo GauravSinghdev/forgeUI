@@ -8,10 +8,10 @@ export default function ComponentLayout({
 }>) {
   return (
     <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 p-2">
-      <div className="hidden col-span-3 sm:col-span-2 lg:col-span-3 sm:block ">
+      <div className="lg:col-span-2 xl:col-span-3">
         <Sidebar />
       </div>
-      <div className="col-span-12 sm:col-span-10 lg:col-span-9">{children}</div>
+      <div className="hidden lg:block lg:col-span-10 xl:col-span-9">{children}</div>
     </div>
   );
 }

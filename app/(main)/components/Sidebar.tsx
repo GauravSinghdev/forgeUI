@@ -89,7 +89,7 @@ export function Sidebar() {
                 }}
                 key={index}
                 >
-                <Link href={link.href} className="text-center">
+                <Link href={link.href} className="flex justify-center text-center">
                   <Button variant={"secondary"}>{link.label}</Button>
                 </Link>
               </motion.div>
