@@ -136,7 +136,7 @@ export default HangingCard;
   };
 
   return (
-    <div className="min-h-screen flex flex-col py-6 px-5">
+    <div className="min-h-screen flex flex-col py-1 px-5">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-4xl font-bold underline text-left mb-5">
@@ -150,7 +150,7 @@ export default HangingCard;
       {/* Tabs */}
       <div className="flex space-x-4 mb-10">
         <button
-          className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
+          className={`px-6 py-2 rounded-lg font-semibold text-white transition-colors ${
             activeTab === "demo"
               ? "bg-cyan-600"
               : "bg-gray-700 hover:bg-gray-600"
@@ -160,7 +160,7 @@ export default HangingCard;
           Preview
         </button>
         <button
-          className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
+          className={`px-6 py-2 rounded-lg font-semibold text-white transition-colors ${
             activeTab === "code"
               ? "bg-cyan-600"
               : "bg-gray-700 hover:bg-gray-600"

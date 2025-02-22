@@ -169,7 +169,7 @@ export default RevealLink;
   };
 
   return (
-    <div className="min-h-screen flex flex-col py-6 px-5 ">
+    <div className="min-h-screen flex flex-col py-1 px-5 ">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-4xl font-bold underline text-left mb-5">

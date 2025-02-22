@@ -7,7 +7,7 @@ export default function ComponentLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 p-4 min-h-screen">
+    <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 p-2">
       <div className="hidden col-span-3 sm:col-span-2 lg:col-span-3 sm:block ">
         <Sidebar />
       </div>

@@ -73,7 +73,7 @@ export function Sidebar() {
   ];
 
   return (
-    <div className="">
+    <div className="py-1 px-2">
       <nav className="space-y-4 flex flex-col">
         {sidebarLinks.map((link, index) => {
           // If it's a button link

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ComponentsPage() {
   return (
     <>
-      <main className="flex flex-col min-h-screen gap-10 p-4 justify-center">
+      <main className="flex flex-col min-h-screen gap-10 px-4 justify-center">
         <Link
           href={"https://x.com/codewithkara"}
           target="_blank"
