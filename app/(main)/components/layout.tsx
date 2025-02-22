@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar } from "./_component/Sidebar";
+import { Sidebar } from "./Sidebar";
 
 export default function ComponentLayout({
   children,
@@ -7,11 +7,11 @@ export default function ComponentLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="">
-      <Sidebar />
+    <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 p-4 min-h-screen">
+      <div className="hidden col-span-3 sm:col-span-2 sm:block ">
+        <Sidebar />
       </div>
-      {children}
+      <div className="col-span-12 sm:col-span-10 lg:col-span-9">{children}</div>
     </div>
   );
 }

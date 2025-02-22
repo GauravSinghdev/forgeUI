@@ -29,7 +29,7 @@ export default {
       },
       animation: {
         tilt: "tilt 10s infinite linear",
-        "border-spin": "border-spin 7s linear infinite",
+        "border-spin": "border-spin 5s linear infinite",
       },
       colors: {
         background: "hsl(var(--background))",

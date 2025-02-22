@@ -15,13 +15,13 @@ const HeroBtns = () => {
       <Link href="/components">
         <div className="relative group">
           <div className="absolute inset-0 bg-pink-800 bg-gradient-to-r from-pink-600 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-          <button className="relative px-7 py-3 bg-black  dark:bg-black rounded-lg leading-none flex items-center text-white/90 hover:text-white">
+          <button className="relative px-7 py-4 bg-black  dark:bg-black rounded-lg leading-none flex items-center text-white/90 hover:text-white">
             Browse Components
           </button>
         </div>
       </Link>
       <Link href="/customised-component">
-        <Button variant="outline" size="lg">
+        <Button variant="outline" className="border-2" size="lg">
           Customized
         </Button>
       </Link>

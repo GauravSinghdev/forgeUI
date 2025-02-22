@@ -10,34 +10,70 @@ export function Sidebar() {
   console.log(path);
   const sidebarLinks = [
     { href: "/pricing", label: "Request for Custom", isButton: true },
+    // {
+    //   href: "/components/all-basic",
+    //   path: "/all-basic",
+    //   label: "All Basic",
+    //   isButton: false,
+    // },
+    // {
+    //   href: "/components/card1",
+    //   path: "/card1",
+    //   label: "Card 1",
+    //   isButton: false,
+    // },
+    // {
+    //   href: "/components/card2",
+    //   path: "/card2",
+    //   label: "Card 2",
+    //   isButton: false,
+    // },
+    // {
+    //   href: "/components/analytics",
+    //   path: "/analytics",
+    //   label: "Analytics",
+    //   isButton: false,
+    // },
     {
-      href: "/components/all-basic",
-      path: "/all-basic",
-      label: "All Basic",
+      href: "/components",
+      path: "/components",
+      label: "Home",
       isButton: false,
     },
     {
-      href: "/components/card1",
-      path: "/card1",
-      label: "Card 1",
+      href: "/components/tilt-Card",
+      path: "/tilt-Card",
+      label: "Tilt Card",
       isButton: false,
     },
     {
-      href: "/components/card2",
-      path: "/card2",
-      label: "Card 2",
+      href: "/components/reveal-Link",
+      path: "/reveal-Link",
+      label: "Reveal Link",
       isButton: false,
     },
     {
-      href: "/components/analytics",
-      path: "/analytics",
-      label: "Analytics",
+      href: "/components/circle-SVG",
+      path: "/circle-SVG",
+      label: "Circle SVG",
+      isButton: false,
+    },
+    {
+      href: "/components/all-button",
+      path: "/all-button",
+      label: "All Button",
+      isButton: false,
+    },
+    {
+      href: "/components/hanging-card",
+      path: "/hanging-card",
+      label: "Hanging Card",
       isButton: false,
     },
   ];
 
   return (
-    <div className="w-1/5 p-6 fixed text-sm">
+    <div className="">
       <nav className="space-y-4 flex flex-col">
         {sidebarLinks.map((link, index) => {
           // If it's a button link
@@ -52,7 +88,7 @@ export function Sidebar() {
                   damping: 15, // Controls the bounciness
                 }}
                 key={index}
-              >
+                >
                 <Link href={link.href} className="text-center">
                   <Button variant={"secondary"}>{link.label}</Button>
                 </Link>
@@ -64,8 +100,8 @@ export function Sidebar() {
             <Link
               key={index}
               href={link.href}
-              className={`transition-colors hover:text-secondary border-b-2 ps-3 ${
-                path === link.label ? "text-primary" : ""
+              className={`transition-colors hover:text-primary border-b-2 ps-3 ${
+                path === link.href ? "border-primary text-primary tracking-widest font-bold text-lg border-r-2" : ""
               }`}
             >
               <motion.div initial={{ x: -5 }} whileHover={{ x: 0 }}>

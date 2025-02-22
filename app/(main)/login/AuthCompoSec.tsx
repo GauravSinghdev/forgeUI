@@ -101,7 +101,7 @@ export function AuthCompoSec() {
   };
 
   return (
-    <div>
+    <div className="">
       <Tabs
         defaultValue="login"
         onValueChange={handleTabChange}

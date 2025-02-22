@@ -2,128 +2,126 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
+  CardDescription,
+  CardContent,
   CardFooter,
-} from "@/components/ui/card";
+} from "@/components/ui/card"; // Adjust import based on your setup
+import { Button } from "@/components/ui/button"; // Adjust import based on your setup
 
+// Sample tiers data (assuming it's defined elsewhere; included here for completeness)
 const tiers = [
   {
-    name: "Free",
-    price: "$0",
-    description: "Essential features for small teams",
-    features: [
-      "Up to 5 users",
-      "10GB storage",
-      "Basic support",
-      "Free components",
-      "API access",
-    ],
+    name: "Basic",
+    price: "$9",
+    description: "Perfect for individuals starting out",
+    features: ["1 User", "5 Projects", "Basic Support"],
+    featured: false,
   },
   {
     name: "Pro",
     price: "$29",
-    description: "Advanced features for growing businesses",
-    features: [
-      "Up to 20 users",
-      "50GB storage",
-      "Priority support",
-      "Advanced analytics",
-      "Custom integrations",
-    ],
+    description: "Ideal for growing teams",
+    features: ["5 Users", "Unlimited Projects", "Priority Support"],
     featured: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
-    description: "Tailored solutions for large organizations",
-    features: [
-      "Unlimited users",
-      "Unlimited storage",
-      "24/7 dedicated support",
-      "Advanced security",
-      "Custom development",
-    ],
+    description: "Tailored for large organizations",
+    features: ["Unlimited Users", "Custom Solutions", "24/7 Support"],
+    featured: false,
   },
 ];
 
 export default function PricingComponent() {
   return (
-    <div className="py-12">
+    <div className="py-6 sm:py-12 md:py-16 lg:py-20 xl:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Simple, transparent pricing
           </h2>
-          <p className="mt-4 text-xl text-gray-500 dark:text-gray-300">
-            {`Choose the plan that's right for you`}
+          <p className="mt-2 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-300">
+            Choose the plan that&apos;s right for you
           </p>
         </div>
-        <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-x-10">
+
+        {/* Pricing Cards */}
+        <div className="mt-8 sm:mt-12 md:mt-16 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {tiers.map((tier) => (
             <motion.div
               whileHover={{
-                scale: 1.1,
-                opacity: 0.9, // Optional opacity change
+                scale: 1.05, // Slightly reduced scale for mobile
+                opacity: 0.9,
               }}
               transition={{
                 type: "spring",
                 stiffness: 100,
-                damping: 20, // Adjust damping to control the bounciness
+                damping: 20,
               }}
-              className="cursor-pointer"
+              className="cursor-pointer w-full"
               key={tier.name}
             >
               <Card
-                className={`flex flex-col justify-between ${
+                className={`flex flex-col justify-between h-full ${
                   tier.featured
-                    ? " bg-gradient-to-br from-blue-500 to-purple-600 text-white"
-                    : ""
+                    ? "bg-gradient-to-br from-blue-500 to-purple-600 text-white"
+                    : "bg-white dark:bg-gray-800"
                 }`}
               >
                 <CardHeader>
                   <CardTitle
-                    className={`text-2xl font-bold ${
-                      tier.featured ? "text-white" : ""
+                    className={`text-xl sm:text-2xl font-bold ${
+                      tier.featured
+                        ? "text-white"
+                        : "text-gray-900 dark:text-white"
                     }`}
                   >
                     {tier.name}
                   </CardTitle>
                   <CardDescription
-                    className={`text-4xl font-extrabold mt-4 ${
-                      tier.featured ? "text-white" : ""
+                    className={`text-3xl sm:text-4xl font-extrabold mt-2 sm:mt-4 ${
+                      tier.featured
+                        ? "text-white"
+                        : "text-gray-900 dark:text-white"
                     }`}
                   >
                     {tier.price}
                     {tier.name !== "Enterprise" && (
-                      <span className="text-xl font-normal">/month</span>
+                      <span className="text-lg sm:text-xl font-normal">
+                        /month
+                      </span>
                     )}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p
-                    className={`mt-4 ${
-                      tier.featured ? "text-blue-100" : "text-gray-500"
+                    className={`mt-3 sm:mt-4 text-sm sm:text-base ${
+                      tier.featured
+                        ? "text-blue-100"
+                        : "text-gray-500 dark:text-gray-300"
                     }`}
                   >
                     {tier.description}
                   </p>
-                  <ul className="mt-6 space-y-4">
+                  <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-start">
                         <Check
-                          className={`h-6 w-6 flex-shrink-0 ${
+                          className={`h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 ${
                             tier.featured ? "text-blue-200" : "text-green-500"
                           }`}
                         />
                         <span
-                          className={`ml-3 ${
-                            tier.featured ? "text-white" : "text-gray-700"
+                          className={`ml-2 sm:ml-3 text-sm sm:text-base ${
+                            tier.featured
+                              ? "text-white"
+                              : "text-gray-700 dark:text-gray-200"
                           }`}
                         >
                           {feature}
@@ -134,10 +132,10 @@ export default function PricingComponent() {
                 </CardContent>
                 <CardFooter>
                   <Button
-                    className={`w-full ${
+                    className={`w-full text-sm sm:text-base py-2 sm:py-3 ${
                       tier.featured
                         ? "bg-white text-blue-600 hover:bg-blue-50"
-                        : ""
+                        : "bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600"
                     }`}
                     variant={tier.featured ? "default" : "outline"}
                   >
