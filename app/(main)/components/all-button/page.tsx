@@ -67,7 +67,7 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
   };
 
   return (
-    <div className="min-h-screen flex flex-col py-4 sm:py-6 px-4 sm:px-5 lg:px-8 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="min-h-screen flex flex-col py-4 sm:py-6 px-4 sm:px-5 lg:px-8 ">
       {/* Header */}
       <div className="mb-6 sm:mb-10">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold underline text-left mb-3 sm:mb-5">
