@@ -15,7 +15,6 @@ interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   disabled?: boolean;
-  [key: string]: any; // For additional HTML button attributes
 }
 
 interface LoadingButtonProps extends ButtonProps {

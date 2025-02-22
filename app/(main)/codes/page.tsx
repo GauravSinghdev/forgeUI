@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Code",

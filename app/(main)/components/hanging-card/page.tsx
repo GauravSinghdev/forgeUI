@@ -1,15 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { motion, MotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 
-
-// Define props for HangingCard (no external props needed for this component)
-interface HangingCardProps {}
-
 // HangingCard Component
-const HangingCard: React.FC<HangingCardProps> = () => {
+const HangingCard = () => {
   const [hovered, setHovered] = useState(false);
 
   return (

@@ -22,7 +22,7 @@ export default function ComponentsPage() {
                 <FlaskConical className="size-6 text-pink-600 -rotate-6" />
                 <span className="text-primary pr-6">follow codewithkara</span>
               </span>
-              <span className="text-indigo-400 sm:pl-6">See what's new →</span>
+              <span className="text-indigo-400 sm:pl-6">See what&apos;s new →</span>
             </button>
           </div>
         </Link>
