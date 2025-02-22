@@ -14,7 +14,6 @@ interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   disabled?: boolean;
-  [key: string]: any; // Allow additional button props
 }
 
 interface LoadingButtonProps extends ButtonProps {
