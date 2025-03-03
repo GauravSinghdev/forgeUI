@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
+import Image from "next/image";
 
 interface ImageCardProps {
-  title: string | undefined;
+  title: string;
   description: string | null;
-  imageUrl: string | undefined;
+  imageUrl: string;
 }
 
 // AnimatedCard Component
@@ -22,7 +23,7 @@ const ImageCard = ({ title, description, imageUrl }: ImageCardProps) => {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div className="w-full h-1/2">
-        <img
+        <Image
           src={imageUrl}
           alt={title}
           className="w-full h-full object-cover"

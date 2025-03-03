@@ -276,7 +276,7 @@ export default AnimatedGradientBorder;
               <FlaskConical className="size-6 text-pink-600 -rotate-12 animate-spin-slow" />
               <span className="text-pink-400 pr-6">follow codewithkara</span>
             </span>
-            <span className="text-indigo-400 sm:pl-6">See what's new →</span>
+            <span className="text-indigo-400 sm:pl-6">See what&apos;s new →</span>
           </button>
         </div>
       </Link>
