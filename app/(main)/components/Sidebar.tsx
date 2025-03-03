@@ -41,9 +41,15 @@ export function Sidebar() {
       isButton: false,
     },
     {
-      href: "/components/tilt-Card",
-      path: "/tilt-Card",
+      href: "/components/tilt-card",
+      path: "/tilt-card",
       label: "Tilt Card",
+      isButton: false,
+    },
+    {
+      href: "/components/auth-form",
+      path: "/auth-form",
+      label: "Auth Form",
       isButton: false,
     },
     {
@@ -61,13 +67,37 @@ export function Sidebar() {
     {
       href: "/components/all-button",
       path: "/all-button",
-      label: "All Button",
+      label: "All Buttons",
       isButton: false,
     },
     {
       href: "/components/hanging-card",
       path: "/hanging-card",
       label: "Hanging Card",
+      isButton: false,
+    },
+    {
+      href: "/components/image-card",
+      path: "/image-card",
+      label: "Image Card",
+      isButton: false,
+    },
+    {
+      href: "/components/animated-accordian",
+      path: "/animated-accordian",
+      label: "Animated Accordian",
+      isButton: false,
+    },
+    {
+      href: "/components/animated-progress",
+      path: "/animated-progress",
+      label: "Animated Scrollbar",
+      isButton: false,
+    },
+    {
+      href: "/components/scramble-text",
+      path: "/scramble-text",
+      label: "Scramble Text",
       isButton: false,
     },
   ];
@@ -88,8 +118,11 @@ export function Sidebar() {
                   damping: 15, // Controls the bounciness
                 }}
                 key={index}
+              >
+                <Link
+                  href={link.href}
+                  className="flex justify-center text-center"
                 >
-                <Link href={link.href} className="flex justify-center text-center">
                   <Button variant={"secondary"}>{link.label}</Button>
                 </Link>
               </motion.div>
@@ -101,7 +134,9 @@ export function Sidebar() {
               key={index}
               href={link.href}
               className={`transition-colors hover:text-primary border-b-2 ps-3 ${
-                path === link.href ? "border-primary text-primary tracking-widest font-bold text-lg border-r-2" : ""
+                path === link.href
+                  ? "border-primary text-primary tracking-widest font-bold text-lg border-r-2"
+                  : ""
               }`}
             >
               <motion.div initial={{ x: -5 }} whileHover={{ x: 0 }}>

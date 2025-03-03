@@ -111,7 +111,7 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="grid gap-4 sm:gap-6 border-2 border-b-0 p-4 sm:p-5 rounded-t-lg ">
+          <div className="grid gap-4 sm:gap-6 border-2 border-b-0 p-4 sm:p-5 rounded">
             <div className="space-y-3 sm:space-y-4">
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
                 Base Buttons
@@ -165,10 +165,10 @@ const BaseButton: React.FC<ButtonProps> = ({ children, className = "", variant =
               ) : (
                 <Copy className="w-4 h-4 sm:w-5 sm:h-5" />
               )}
-              <span>{copied ? "Copied" : "Copy"}</span>
+              {/* <span>{copied ? "Copied" : "Copy"}</span> */}
             </button>
             <pre
-              className="text-gray-800 dark:text-gray-200 p-4 sm:p-6 rounded-lg overflow-x-auto overflow-y-auto text-xs sm:text-sm md:text-base max-h-[500px] sm:max-h-[600px] border-2 bg-white dark:bg-gray-800"
+              className="text-gray-800 dark:text-gray-200 p-4 sm:p-6 rounded overflow-x-auto overflow-y-auto text-xs sm:text-sm md:text-base max-h-[500px] sm:max-h-[600px] border-2"
               style={{
                 scrollbarWidth: "thin" as const,
                 scrollbarColor: "#22d3ee #1e293b",

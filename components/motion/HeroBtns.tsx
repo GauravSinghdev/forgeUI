@@ -20,7 +20,7 @@ const HeroBtns = () => {
           </button>
         </div>
       </Link>
-      <Link href="/customised-component">
+      <Link href="/customize">
         <Button variant="outline" className="border-2" size="lg">
           Customized
         </Button>
