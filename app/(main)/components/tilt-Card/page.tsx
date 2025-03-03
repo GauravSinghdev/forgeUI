@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { Copy, Check } from "lucide-react"; // Import Copy and Check icons
+import { Copy, Check } from "lucide-react";
 
-// TiltCard Component
 interface TiltCardProps {
   title: string;
   description: string;
