@@ -190,7 +190,7 @@ export default AnimatedAccordion;
               ) : (
                 <Copy className="w-5 h-5" />
               )}
-              <span className="text-sm">{copied ? "Copied" : "Copy"}</span>
+              {/* <span className="text-sm">{copied ? "Copied" : "Copy"}</span> */}
             </button>
             <pre
               className="text-gray-800 dark:text-gray-200 p-6 rounded overflow-x-auto overflow-y-auto text-sm max-h-[600px] border-2"
