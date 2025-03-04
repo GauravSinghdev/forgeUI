@@ -136,9 +136,9 @@ export default AnimatedScrambleText;
   };
 
   return (
-    <div className="min-h-screen flex flex-col py-4 px-4 sm:px-6">
+    <div className="min-h-screen flex flex-col py-1 px-5 ">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-10">
         <h1 className="text-3xl sm:text-4xl font-bold underline text-left mb-4">
           Scramble Text Component
         </h1>
@@ -180,7 +180,7 @@ export default AnimatedScrambleText;
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="flex justify-center border-2 border-b-0 pt-4 sm:pt-5">
+          <div className="flex justify-center border-2 border-b-0 pt-5">
             <ScrambleDemo />
           </div>
         ) : (
