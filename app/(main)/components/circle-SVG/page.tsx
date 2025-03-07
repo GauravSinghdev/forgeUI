@@ -175,7 +175,7 @@ export default DrawCircleText;
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="flex justify-center border-2 border-b-0 pt-5">
+          <div className="flex justify-center border-2 border-b-0 pt-5 px-1">
             <DrawCircleText />
           </div>
         ) : (

@@ -22,7 +22,7 @@ const AnimatedAuthTabs: React.FC = () => {
   };
 
   return (
-    <div className="w-96 bg-white rounded-lg shadow-md p-6">
+    <div className="w-80 sm:w-96 bg-white rounded-lg shadow-md p-6">
       {/* Tabs */}
       <div className="flex justify-center mb-6">
         <motion.button

@@ -12,7 +12,7 @@ interface AnimatedProgressBarProps {
 
 const AnimatedProgressBar: React.FC<AnimatedProgressBarProps> = ({ progress, label }) => {
   return (
-    <div className="w-80">
+    <div className="w-60 sm:w-96">
       <div className="mb-2 flex justify-between">
         <span className="text-gray-800 font-semibold">{label}</span>
         <span className="text-gray-600">{progress}%</span>
@@ -123,7 +123,7 @@ export default AnimatedProgressBar;
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="flex justify-center border-2 border-b-0 pt-5">
+          <div className="flex justify-center border-2 border-b-0 pt-5 px-1">
             <ProgressBarDemo />
           </div>
         ) : (

@@ -14,7 +14,7 @@ const AnimatedAccordion: React.FC<AnimatedAccordionProps> = ({ title, content })
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-96">
+    <div className="w-80 sm:w-96">
       <motion.div
         className="bg-white rounded-lg shadow-md overflow-hidden"
         whileHover={{ scale: 1.02 }}
@@ -170,7 +170,7 @@ export default AnimatedAccordion;
         transition={{ duration: 0.5 }}
       >
         {activeTab === "demo" ? (
-          <div className="flex justify-center border-2 border-b-0 pt-5">
+          <div className="flex justify-center border-2 border-b-0 pt-5 px-5">
             <AccordionDemo />
           </div>
         ) : (

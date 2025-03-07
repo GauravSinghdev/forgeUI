@@ -44,7 +44,7 @@ const AnimatedScrambleText: React.FC<AnimatedScrambleTextProps> = ({
 
   return (
     <motion.div
-      className="text-2xl sm:text-3xl font-bold text-white cursor-pointer"
+      className="text-xl sm:text-3xl font-bold text-white cursor-pointer"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onViewportEnter={() => setIsHovered(true)}

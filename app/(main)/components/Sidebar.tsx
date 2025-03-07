@@ -10,30 +10,6 @@ export function Sidebar() {
   console.log(path);
   const sidebarLinks = [
     { href: "/pricing", label: "Request for Custom", isButton: true },
-    // {
-    //   href: "/components/all-basic",
-    //   path: "/all-basic",
-    //   label: "All Basic",
-    //   isButton: false,
-    // },
-    // {
-    //   href: "/components/card1",
-    //   path: "/card1",
-    //   label: "Card 1",
-    //   isButton: false,
-    // },
-    // {
-    //   href: "/components/card2",
-    //   path: "/card2",
-    //   label: "Card 2",
-    //   isButton: false,
-    // },
-    // {
-    //   href: "/components/analytics",
-    //   path: "/analytics",
-    //   label: "Analytics",
-    //   isButton: false,
-    // },
     {
       href: "/components",
       path: "/components",
