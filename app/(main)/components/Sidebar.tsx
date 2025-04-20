@@ -76,6 +76,30 @@ export function Sidebar() {
       label: "Scramble Text",
       isButton: false,
     },
+    {
+      href: "/components/side-bar/1",
+      path: "/side-bar/1",
+      label: "Sidebar 1",
+      isButton: false,
+    },
+    {
+      href: "/components/side-bar/2",
+      path: "/side-bar/2",
+      label: "Sidebar 2",
+      isButton: false,
+    },
+    {
+      href: "/components/bubble-text",
+      path: "/bubble-text",
+      label: "Bubble Text",
+      isButton: false,
+    },
+    {
+      href: "/components/tick-loader",
+      path: "/tick-loader",
+      label: "Tick Loader ",
+      isButton: false,
+    },
   ];
 
   return (

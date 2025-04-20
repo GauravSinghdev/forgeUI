@@ -6,12 +6,12 @@ import { Shapes } from "lucide-react";
 export async function Appbar() {
   const navLinks = [
     { href: "/components", label: "Components" },
-    {
-      href: "/my-links",
-      label: "My Links",
-      badge: "new",
-    },
     { href: "/pricing", label: "Pricing" },
+    // {
+    //   href: "/my-links",
+    //   label: "My Links",
+    //   badge: "new",
+    // },
     // { href: "#testimonials", label: "Testimonials" },
     // { href: "#faq", label: "FAQ" },
   ];
@@ -49,11 +49,11 @@ export async function Appbar() {
                 className="text-foreground/80 hover:text-foreground transition-colors flex gap-2 items-center"
               >
                 {link.label}
-                {link.badge && (
+                {/* {link.badge && (
                   <span className="px-2 py-0.5 bg-primary rounded text-xs">
                     {link.badge}
                   </span>
-                )}
+                )} */}
               </Link>
             ))}
           </nav>
