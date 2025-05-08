@@ -77,7 +77,7 @@ interface IconContainerProps {
 const IconContainer: React.FC<IconContainerProps> = ({ ele, mouseX }) => {
   const ref = useRef<HTMLDivElement>(null);
   const distance = useTransform(mouseX, (val: number) => {
-    let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
 
